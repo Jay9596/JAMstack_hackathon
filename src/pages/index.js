@@ -1,19 +1,28 @@
-import React from 'react'
-import { Link } from 'gatsby'
+import React from 'react';
+import styled from 'styled-components';
 
+import Card from '../components/card'
+import Form from '../components/form'
 import Layout from '../components/layout'
-import Image from '../components/image'
+import Header from '../components/header'
+
+// TODO: Move Card & Center to secondary view
+const Center = styled.div`
+  display: flex;
+  justify-content: center;
+`;
 
 const IndexPage = () => (
-  <Layout>
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: '300px', marginBottom: '1.45rem' }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
+  <React.Fragment>
+    <Header center>
+      <Form />
+    </Header>
+    <Layout>
+      <Center>
+        <Card avatarUrl='https://twitter-avatar.now.sh/elonmusk/' name='Elon Musk' username='elonmusk' starCount='42' />
+      </Center>
+    </Layout>
+  </React.Fragment>
 )
 
 export default IndexPage
