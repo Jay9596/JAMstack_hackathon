@@ -8,7 +8,7 @@ import Image from '../components/image'
 class IndexPage extends Component {
   constructor() {
     super()
-    this.setState = {
+    this.state = {
       user: {},
     }
   }
