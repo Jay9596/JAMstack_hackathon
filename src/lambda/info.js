@@ -1,8 +1,10 @@
 const axios = require('axios')
 
 exports.handler = function(event, context, callback) {
+  let { user } = event.queryStringParameters
+  console.log('User', user)
   axios
-    .get('https://api.github.com/users/jay9596')
+    .get(`https://api.github.com/users/${user}`)
     .then(res => {
       // console.log(res.data)
       let info = {
