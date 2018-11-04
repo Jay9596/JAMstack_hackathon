@@ -8,7 +8,7 @@ exports.handler = function(event, context, callback) {
     .then(res => {
       // console.log(res.data)
       if (res.message != undefined || res.message != null) {
-        throw new Error("Rate Limit reached")
+        throw new Error('Rate Limit reached')
       }
       let info = {
         name: res.data.login,
